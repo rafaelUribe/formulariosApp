@@ -41,6 +41,7 @@ export class BasicosComponent implements OnInit{
   guardar(){
 
     if(this.miFormulario.invalid) {
+      console.log('invalid')
       this.miFormulario.markAllAsTouched()
       return
     }
