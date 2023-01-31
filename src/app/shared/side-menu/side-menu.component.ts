@@ -10,7 +10,7 @@ interface MenuItem {
   templateUrl: './side-menu.component.html',
   styles: [
     `
-      .pointer{
+      li{
         cursor: pointer !important;
       }
     `

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-switches',
@@ -6,6 +6,17 @@ import { Component } from '@angular/core';
   styles: [
   ]
 })
-export class SwitchesComponent {
+export class SwitchesComponent implements OnInit{
 
+  persona = {
+    genero: 'F',
+    notificaciones: false,
+  }
+
+  terminosYCondiciones: boolean = false
+
+  ngOnInit(): void {
+    
+  }
+  
 }
