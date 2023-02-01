@@ -10,7 +10,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class DinamicosComponent {
 
   miFormulario: FormGroup = this.fb.group({
-    nombre: [, [Validators.required, Validators.minLength(3)]]
+    nombre: ['', [Validators.required, Validators.minLength(3)]]
   })
 
   constructor(
