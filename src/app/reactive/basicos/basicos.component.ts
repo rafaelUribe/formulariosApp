@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-basicos',
@@ -26,19 +26,22 @@ export class BasicosComponent implements OnInit{
   ) {}
 
   ngOnInit(): void {
-    this.miFormulario.setValue({
+    this.miFormulario.reset({
       nombre: 'RTX 4080ti',
-      precio: 16
+      precio: 1600,
     })
   }
 
   campoEsValido(control: string): boolean | null {
-    return this.miFormulario.controls[control].errors && this.miFormulario.controls[control].touched
+    return this.miFormulario.controls[control].errors 
+            && 
+            this.miFormulario.controls[control].touched
   }
 
   guardar(){
 
     if(this.miFormulario.invalid) {
+      console.log('invalid')
       this.miFormulario.markAllAsTouched()
       return
     }
