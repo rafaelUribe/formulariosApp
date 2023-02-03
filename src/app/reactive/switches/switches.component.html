@@ -2,7 +2,8 @@
 <hr>
 
 <form 
-
+    [formGroup]="miFormulario"
+    (ngSubmit)="guardar()"
 >
     <!-- Radio -->
     <div class="row mb-3">
@@ -15,7 +16,7 @@
                 class="form-check-input" 
                 type="radio"
                 value="M"
-                name="radioGenero" 
+                formControlName="genero"
                 id="radioMasculino"
             >
             <label class="form-check-label" for="radioMasculino">
@@ -27,7 +28,7 @@
                 class="form-check-input" 
                 type="radio"
                 value="F"
-                name="radioGenero" 
+                formControlName="genero"
                 id="radioFemenino"
             >
             <label class="form-check-label" for="radioFemenino">
@@ -47,7 +48,7 @@
                 <input 
                     class="form-check-input" 
                     type="checkbox" 
-                    name="notificaciones"
+                    formControlName="notificaciones"
                     id="flexSwitchCheckChecked" 
                 >
                 <label class="form-check-label" for="flexSwitchCheckChecked">
@@ -68,6 +69,7 @@
                     class="form-check-input" 
                     type="checkbox" 
                     id="flexCheckDefault"
+                    formControlName="condiciones"
                 >
                 <label 
                     class="form-check-label" 
@@ -84,6 +86,7 @@
         <div class="">
             <button
                 class="btn btn-primary float-end"
+                type="submit"
             >
                 Guardar
             </button>
@@ -92,7 +95,7 @@
 
 </form>
 
-<!-- <h5>
+<h5>
     Valor del formulario
 </h5>
 <pre>
@@ -111,7 +114,7 @@
 <h5>Valid</h5>
 <pre>{{ miFormulario.valid }}</pre>
 
-<h5>Términos</h5>
+<!-- <h5>Términos</h5>
 <pre>{{ miFormulario.controls['terminos']?.errors | json }}</pre>
 
 <br>
